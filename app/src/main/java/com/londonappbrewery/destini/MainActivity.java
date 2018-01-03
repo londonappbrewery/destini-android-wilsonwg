@@ -16,7 +16,6 @@ public class MainActivity extends AppCompatActivity {
     private Button mButtonButtom;
     private int mQuestion = 1;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +36,28 @@ public class MainActivity extends AppCompatActivity {
 
                 //pass in the mQuestion variables to update the content??
 
-                topButtonClick(mQuestion);
+                if (mQuestion == 1){
+                    mStoryTextView.setText(R.string.T3_Story);
+                    mButtonTop.setText(R.string.T3_Ans1);
+                    mButtonButtom.setText(R.string.T3_Ans2);
+                    mQuestion = 3;
+                }
+
+                else if (mQuestion == 2){
+
+                    mStoryTextView.setText(R.string.T3_Story);
+                    mButtonTop.setText(R.string.T3_Ans1);
+                    mButtonButtom.setText(R.string.T3_Ans2);
+                    mQuestion = 3;
+                }
+
+                else if (mQuestion == 3){
+
+                    mStoryTextView.setText(R.string.T6_End);
+                    mButtonTop.setVisibility(View.GONE);
+                    mButtonButtom.setVisibility(View.GONE);
+
+                }
 
 
             }
@@ -51,66 +71,31 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                botoomButtonClick(mQuestion);
+                if (mQuestion == 1){
+                    mStoryTextView.setText(R.string.T2_Story);
+                    mButtonTop.setText(R.string.T2_Ans1);
+                    mButtonButtom.setText(R.string.T2_Ans2);
+                    mQuestion = 2;
+                }
+
+                else if (mQuestion == 2){
+
+                    mStoryTextView.setText(R.string.T4_End);
+                    mButtonTop.setVisibility(View.GONE); //Hide Button
+                    mButtonButtom.setVisibility(View.GONE); //Hide Button
+
+                }
+
+                else if (mQuestion == 3){
+
+                    mStoryTextView.setText(R.string.T5_End);
+                    mButtonTop.setVisibility(View.GONE);
+                    mButtonButtom.setVisibility(View.GONE);
+
+                }
             }
         });
 
     }
-
-
-    private void topButtonClick(int mQuestion){
-
-        if (mQuestion == 1){
-            mStoryTextView.setText(R.string.T3_Story);
-            mButtonTop.setText(R.string.T3_Ans1);
-            mButtonButtom.setText(R.string.T3_Ans2);
-            mQuestion = 3;
-        }
-
-        else if (mQuestion == 2){
-
-            mStoryTextView.setText(R.string.T6_End);
-            mButtonTop.setVisibility(View.GONE);
-            mButtonButtom.setVisibility(View.GONE);
-        }
-
-        else if (mQuestion == 3){
-
-            mStoryTextView.setText(R.string.T6_End);
-            mButtonTop.setVisibility(View.GONE);
-            mButtonButtom.setVisibility(View.GONE);
-
-        }
-
-    }
-
-    private void botoomButtonClick(int mQuestion){
-
-        if (mQuestion == 1){
-            mStoryTextView.setText(R.string.T2_Story);
-            mButtonTop.setText(R.string.T2_Ans1);
-            mButtonButtom.setText(R.string.T2_Ans2);
-            mQuestion = 2;
-        }
-
-        else if (mQuestion == 2){
-
-            mStoryTextView.setText(R.string.T4_End);
-            mButtonTop.setVisibility(View.GONE); //Hide Button
-            mButtonButtom.setVisibility(View.GONE); //Hide Button
-
-        }
-
-        else if (mQuestion == 3){
-
-            mStoryTextView.setText(R.string.T5_End);
-            mButtonTop.setVisibility(View.GONE);
-            mButtonButtom.setVisibility(View.GONE);
-
-        }
-
-
-    }
-
 
 }
